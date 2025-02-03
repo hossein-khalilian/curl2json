@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "curl2json"
+version = "0.1.0"
+description = "Convert cURL commands to JSON request specifications"
+readme = "README.md"
+authors = [{ name = "Hossein Khalilian", email = "hse.khalilian08@gmail.com" }]
+license = { text = "MIT" }
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+requires-python = ">=3.8"
+dependencies = []
