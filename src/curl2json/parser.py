@@ -12,7 +12,7 @@ def parse_curl(curl_command: str) -> dict:
         "cookies": {},
         "data": None,
         "auth": None,
-        "verify_ssl": True,
+        "verify": True,
     }
 
     i = 0
@@ -55,7 +55,7 @@ def parse_curl(curl_command: str) -> dict:
             }
             i += 2
         elif token == "-k":
-            parsed["verify_ssl"] = False
+            parsed["verify"] = False
             i += 1
         else:
             i += 1

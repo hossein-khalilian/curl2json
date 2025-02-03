@@ -17,7 +17,7 @@ def convert_curl_to_json(curl_command: str) -> dict:
         "headers": parsed["headers"],
         "cookies": parsed["cookies"],
         "data": parsed["data"],
-        "verify_ssl": parsed["verify_ssl"],
+        "verify": parsed["verify"],
     }
 
     if parsed["auth"]:

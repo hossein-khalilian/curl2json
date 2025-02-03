@@ -12,7 +12,7 @@ def test_basic_get():
         "headers": {},
         "cookies": {},
         "data": None,
-        "verify_ssl": True,
+        "verify": True,
     }
 
 
@@ -41,13 +41,13 @@ def test_basic_auth():
     curl = "curl -u user:pass https://secured.example.com"
     result = convert_curl_to_json(curl)
     assert result["auth"] == {"username": "user", "password": "pass"}
-    assert result["verify_ssl"] is True
+    assert result["verify"] is True
 
 
 def test_ssl_verification_disabled():
     curl = "curl -k https://insecure.example.com"
     result = convert_curl_to_json(curl)
-    assert result["verify_ssl"] is False
+    assert result["verify"] is False
 
 
 def test_complex_case():
@@ -62,7 +62,7 @@ def test_complex_case():
     assert result["method"] == "PUT"
     assert result["headers"]["Authorization"] == "Bearer token"
     assert result["auth"]["username"] == "admin"
-    assert result["verify_ssl"] is False
+    assert result["verify"] is False
 
 
 def test_single_cookie():
