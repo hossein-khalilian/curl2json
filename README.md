@@ -5,7 +5,7 @@ Convert cURL commands to JSON requests
 ## Installation
 
 ```bash
-pip install git+https://github.com/yourusername/curl2json.git
+pip install git+https://github.com/hossein-khalilian/curl2json.git
 ```
 
 ## Basic Usage
