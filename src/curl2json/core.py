@@ -11,9 +11,16 @@ def convert_curl_to_json(curl_command: str) -> dict:
     if not parsed["url"]:
         raise ValueError("Missing URL in cURL command")
 
-    return {
+    result = {
         "url": parsed["url"],
         "method": parsed["method"],
         "headers": parsed["headers"],
+        "cookies": parsed["cookies"],
         "data": parsed["data"],
+        "verify_ssl": parsed["verify_ssl"],
     }
+
+    if parsed["auth"]:
+        result["auth"] = parsed["auth"]
+
+    return result
